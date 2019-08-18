@@ -6,14 +6,14 @@
   # enough to change it
 
   # This function is called in your prompt to output your active git branch.
-  function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-  }
+  # function parse_git_branch {
+  #  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  # }
 
   # This function builds your prompt. It is called below
   function prompt {
     # Define the prompt character
-    local   CHAR="♥"
+    local   CHAR="😎"
 
     # Define some local colors
     local   RED="\[\e[0;31m\]"
@@ -27,7 +27,7 @@
     # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
     # Here is where we actually export the PS1 Variable which stores the text for your prompt
-    export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED\$(parse_git_branch) $GREEN\W\n$BLUE//$RED $CHAR $RESET"
+    export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
       PS2='> '
       PS4='+ '
     }
