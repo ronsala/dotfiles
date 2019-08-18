@@ -9,5 +9,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export SESSION_SECRET=8e69581282ba6073cdce7f024e03df8dc46b611a41ea7c0db2880a5524234fd6fc91c1c581352e1109572c2d0e7853328e6d27832110c7d4d5f72c0444503b74
 alias config='/usr/bin/git --git-dir=/Users/RonSala/.cfg/ --work-tree=/Users/RonSala'
 
-# Add bash aliases.
+# Aliases
+# alias alias_name="command_to_run"
 alias bcm='belly c -m'
+alias bh="belly --help"
