@@ -12,7 +12,7 @@
 
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
-export PS1="\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 '%s') $ \[$(tput sgr0)\]"
+export PS1='\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 "%s") $ \[$(tput sgr0)\]'
 #  export PS1='[\W]$(__git_ps1 "(%s)"): '
 # export PS1='\e[0;36m\D{%F %T} [\W]$(__git_ps1 "(%s)")\[\e[0m\]\e[m\n\e[0;32m$ \e[m'
 # export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
