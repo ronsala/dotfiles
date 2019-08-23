@@ -175,6 +175,8 @@ function extract () {
   alias l='ls -lah'
 
   # Git
+  alias bcm='belly c -m'
+  alias bh="belly --help"
   alias gcl="git clone"
   alias gst="git status"
   alias gl="git pull"
