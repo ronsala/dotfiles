@@ -10,10 +10,26 @@
   #  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   # }
 
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+export PS1="\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 '%s') $ \[$(tput sgr0)\]"
+#  export PS1='[\W]$(__git_ps1 "(%s)"): '
+# export PS1='\e[0;36m\D{%F %T} [\W]$(__git_ps1 "(%s)")\[\e[0m\]\e[m\n\e[0;32m$ \e[m'
+# export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
+# export PS1="\[\e[30;46m\]Y \d \t \W \$(__git_ps1 "(%s)")\n\\$ \[\e[0m\]"
+# export PS1="\[\e[30;44m\]\[\e[0m\]"
+# export PS1="\[\e[30;44m\]\t\[\e[0m\]"
+
+fi
+
+    function parse_git_branch {
+      __git_ps1
+    }
+
   # This function builds your prompt. It is called below
   function prompt {
     # Define the prompt character
-    local   CHAR="😎"
+    # local   CHAR="$"
 
     # Define some local colors
     local   RED="\[\e[0;31m\]"
@@ -27,10 +43,12 @@
     # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
     # Here is where we actually export the PS1 Variable which stores the text for your prompt
-    export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
+    # export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
       PS2='> '
       PS4='+ '
     }
+
+export PS1
 
   # Finally call the function and our prompt is all pretty
   prompt
