@@ -10,6 +10,21 @@ alias config='/usr/bin/git --git-dir=/Users/RonSala/.cfg/ --work-tree=/Users/Ron
 source ~/.git-prompt.sh
 
 # Aliases
-# alias alias_name="command_to_run"
-alias bcm='belly c -m'
-alias bh="belly --help"
+# =====================
+  # LS
+  alias l='ls -lah'
+
+  # Git
+  alias bcm='belly c -m'
+  alias bh="belly --help"
+  alias gcl="git clone"
+  alias gst="git status"
+  alias gl="git pull"
+  alias gp="git push"
+  alias gd="git diff | subl"
+  alias gc="git commit -v"
+  alias gca="git commit -v -a"
+  alias gb="git branch"
+  alias gba="git branch -a"
+  alias gcam="git commit -am"
+  alias gbb="git branch -b"

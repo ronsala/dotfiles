@@ -1,3 +1,5 @@
+# File adapted from the one I got from Flatiron School
+
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 export PS1='\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 "%s") $ \[$(tput sgr0)\]'
@@ -26,14 +28,6 @@ fi
     # GIT_MERGE_AUTO_EDIT
     # This variable configures git to not require a message when you merge.
     export GIT_MERGE_AUTOEDIT='no'
-
-    # Editors
-    # Tells your shell that when a program requires various editors, use sublime.
-    # The -w flag tells your shell to wait until sublime exits
-    export VISUAL="atom"
-    export SVN_EDITOR="atom"
-    export GIT_EDITOR="atom"
-    export EDITOR="atom"
 
     # Version
     # What version of the Flatiron School bash profile this is
@@ -73,12 +67,6 @@ fi
 # A function to CD into the desktop from anywhere
 # so you just type desktop.
 # HINT: It uses the built in USER variable to know your OS X username
-
-# USE: desktop
-#      desktop subfolder
-function desktop {
-  cd /Users/$USER/Desktop/$@
-}
 
 # A function to easily grep for a matching process
 # USE: psg postgres
