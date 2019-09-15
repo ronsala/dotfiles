@@ -1,36 +1,9 @@
-# Configuring Our Prompt
-# ======================
+ if [ -f ~/.git-prompt.sh ]; then
+ source ~/.git-prompt.sh
+ export PS1='\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 "%s") $ \[$(tput sgr0)\]'
+fi
 
-  # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
-  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care
-  # enough to change it
-
-  # This function is called in your prompt to output your active git branch.
-  # function parse_git_branch {
-  #  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-  # }
-
-  # This function builds your prompt. It is called below
-  function prompt {
-    # Define the prompt character
-    local   CHAR="😎"
-
-    # Define some local colors
-    local   RED="\[\e[0;31m\]"
-    local   BLUE="\[\e[0;34m\]"
-    local   GREEN="\[\e[0;32m\]"
-    local   GRAY_TEXT_BLUE_BACKGROUND="\[\e[37;44;1m\]"
-
-    # Define a variable to reset the text color
-    local   RESET="\[\e[0m\]"
-
-    # ♥ ☆ - Keeping some cool ASCII Characters for reference
-
-    # Here is where we actually export the PS1 Variable which stores the text for your prompt
-    export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED $GREEN\W\n$BLUE//$RED $CHAR $RESET"
-      PS2='> '
-      PS4='+ '
-    }
+export PS1
 
   # Finally call the function and our prompt is all pretty
   prompt
@@ -157,6 +130,8 @@ function extract () {
   alias l='ls -lah'
 
   # Git
+  alias bcm='belly c -m'
+  alias bh="belly --help"
   alias gcl="git clone"
   alias gst="git status"
   alias gl="git pull"
