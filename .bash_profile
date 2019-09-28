@@ -1,8 +1,13 @@
+# This file is in ~/ and /dev/dotfiles. Commit to Github from latter.:
+# $ cp ~/.bash_profile /Users/RonSala/Data/Dropbox/dev/dotfiles
+
 # File adapted from the one I got from Flatiron School
+
+source ~/.bashrc
 
 if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
-export PS1='\[$(tput setaf 0)\]\[$(tput setab 6)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 "%s") $ \[$(tput sgr0)\]'
+  export PS1='\[$(tput setaf 7)\]\[$(tput setab 0)\]\D{%F|%T}\[$(tput sgr0)\]\n\[$(tput setaf 2)\]\[$(tput setab 0)\]\W|$(__git_ps1 "%s") $ \[$(tput sgr0)\]'
 fi
 
 # To open bash profile from any directory
