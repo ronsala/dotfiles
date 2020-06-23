@@ -95,11 +95,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Git
-alias bcm='belly c -m'
+
+alias alias bcm='belly c -m'
 alias gcl="git clone"
 alias gst="git status"
 alias gl="git pull"
